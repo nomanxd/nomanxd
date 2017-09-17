@@ -9,7 +9,7 @@ def linear_merge(lst1, lst2):
     j = 0
     while (i < len(lst1) and j < len(lst2)):
         if lst1[i] < lst2[j]:
-            res.append lst[i]
+            res.append lst1[i]
             i += 1
         else:
             res.append lst2[j]
