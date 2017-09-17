@@ -1,0 +1,60 @@
+def remove_adjacent(lst):
+    for i in range(len(lst)):
+	if lst[i] == lst[i-1]:
+	    lst[i].pop;
+	    i -= i;
+        i += i;
+    return lst;
+
+----------------------------------------
+
+def linear_merge(lst1, lst2):
+    return sorted(lst1, lst2);
+
+----------------------------------------
+
+def verbing(s):
+    if len(s) >= 3:
+	if s[-3:1] == ing:
+	    s = s + "ly";
+	else:
+	    s = s + "ing";
+    return s;
+
+----------------------------------------
+
+def not_bad(s):
+    bad = s.find("bad");
+    not = s.find("not");
+    if not > bad:
+	s = s.replace(s[not]:s[bad]:1);
+    return s;
+
+----------------------------------------
+
+def front_back(a, b):
+  loa = len(a);
+  lob = len(b);
+
+  if lob % 2 == 0:
+    b_i = lob // 2;
+  else:
+    b_i = (lob // 2) + 1;
+
+  if loa % 2 == 0:
+    a_i = loa // 2;
+  else:
+    a_i = (loa // 2) + 1;
+
+  foa = a[0:a_i];
+  boa = a[a_i:];
+
+  fob = b[0:b_i];
+  bob = b[b_i:];
+
+  return foa + fob + boa + bob;
+
+----------------------------------------
+
+
+
