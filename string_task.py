@@ -12,5 +12,5 @@ def not_bad(s):
     bad = s.find("bad") + 3
     nt = s.find("not")
     if nt > bad:
-        s = s.replace(s[nt:bad:)], "good")
+        s = s.replace(s[nt:bad:], "good")
     return s
