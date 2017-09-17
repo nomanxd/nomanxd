@@ -4,7 +4,7 @@ def remove_adjacent(lst):
 
 
 def linear_merge(lst1, lst2):
-    return sorted(lst1 + lst2);
+    return sorted(lst1 + lst2)
 
 
 
