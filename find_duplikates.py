@@ -1,16 +1,16 @@
 import sys
 import os
-import hashlib 
+import hashlib
+from os import walk
 
 
 def sha1(path, blocksize = 65536):
-    afile = open(path, 'rb')
+    with open(filename, 'rb') as afile
     h = hashlib.sha1()
     buf = afile.read(blocksize)
     while len(buf) > 0:
         h.update(buf)
         buf = afile.read(blocksize)
-    afile.close()
     return h.hexdigest()
     
     
@@ -19,11 +19,12 @@ def findDup(direct):
     for dirName, _, fileList in os.walk(direct):
         for filename in fileList:
             path = os.path.join(dirName, filename)
-            cur = sha1(path)
-            if cur not in duplikates:
-                duplikates[cur] = []
-            duplikates[cur].append(path)
-    for _, lst in duplikates.items():
+            if filename[0] != '~' and filename[0] != '.':
+                cur = sha1(path)
+                if cur not in duplikates:
+                    duplikates[cur] = []
+                duplikates[cur].append(path)
+    for _, lst in duplikates.values():
         if(len(lst) > 1):
             print(':'.join(lst)) 
     return 
