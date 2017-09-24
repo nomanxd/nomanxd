@@ -3,7 +3,7 @@ def remove_adjacent(lst):
     
 
 
-ddef linear_merge(lst1, lst2):
+def linear_merge(lst1, lst2):
     res = []
     i = 0
     j = 0
