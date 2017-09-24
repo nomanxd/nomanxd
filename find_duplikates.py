@@ -19,7 +19,7 @@ def findDup(direct):
     for dirName, _, fileList in os.walk(direct):
         for filename in fileList:
             path = os.path.join(dirName, filename)
-            if filename[0] != '~' and filename[0] != '.':
+            if filename[0] != '~' and filename[0] != '.' and not os.path.islink(path):
                 cur = sha1(path)
                 if cur not in duplikates:
                     duplikates[cur] = []
