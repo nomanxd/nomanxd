@@ -9,9 +9,9 @@ def verbing(s):
 
 
 def not_bad(s):
-    bad = s.find("bad")
-    nt = s.find("not")
-    if nt < bad:
-        s = s.replace(s[nt: (bad+3):], 'good')
-    return s
+  nt = s.find("not")
+  bad = s.find("bad")
+  if nt != -1 and bad != -1 and  nt < bad:
+    s = s[:nt] + 'good' + s[bad+3:]
+  return s
 
