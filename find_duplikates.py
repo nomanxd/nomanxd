@@ -5,7 +5,7 @@ from os import walk
 
 
 def sha1(path, blocksize = 65536):
-    with open(filename, 'rb') as afile
+    with open(filename, 'rb') as afile:
     h = hashlib.sha1()
     buf = afile.read(blocksize)
     while len(buf) > 0:
