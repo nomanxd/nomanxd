@@ -31,4 +31,4 @@ def findDup(direct):
     
     
 if __name__ == '__main__':
-    findDup(sys.argv[0])
+    findDup(sys.argv[1])
