@@ -1,0 +1,62 @@
+import numpy as np
+import sys
+
+
+def Str(a, b):
+    if(a.shape[0] <= 2):
+        return np.dot(a, b)
+    a = np.vsplit(a, 2)
+    a[0] = np.hsplit(a[0], 2)
+    a[1] = np.hsplit(a[1], 2)
+    b = np.vsplit(b, 2)
+    b[0] = np.hsplit(b[0], 2)
+    b[1] = np.hsplit(b[1], 2)
+    m1 = Str(a[0][0] + a[1][1], b[0][0] + b[1][1])
+    m2 = Str(a[1][0] + a[1][1], b[0][0])
+    m3 = Str(a[0][0], b[0][1] - b[1][1])
+    m4 = Str(a[1][1], b[1][0] - b[0][0])
+    m5 = Str(a[0][0] + a[0][1], b[1][1])
+    m6 = Str(a[1][0] - a[0][0], b[0][0] + b[0][1])
+    m7 = Str(a[0][1] - a[1][1], b[1][0] + b[1][1])
+    c11 = m1 + m4 - m5 + m7
+    c12 = m3 + m5
+    c21 = m2 + m4
+    c22 = m1 - m2 + m3 + m6
+    return np.vstack((np.hstack((c11, c12)), np.hstack((c21, c22))))
+
+
+def output_matrix(c, n):
+    for i in range(n):
+        for j in range(n):
+            print(c[i, j], end=" ")
+        print()
+    return
+
+
+def privmatrix1(n):
+    f = 1
+    while(f < n):
+        f = f * 2
+    return f
+
+
+def intput_matrix(n):
+    privmatrix = privmatrix1(n)
+    a = np.zeros((privmatrix, n), dtype=int)
+    for i in range(n):
+        a[i] = input().split()
+    a = np.hstack((a, np.zeros((privmatrix, privmatrix - n), dtype=int)))
+    return a
+
+
+def iomatrix():
+    n = int(input())
+    a = input_matrix(n)
+    b = input_matrix(n)
+    c = Str(a, b)
+    output_matrix(c, n)
+    return
+
+
+if __name__ == "__main__":
+    iomatrix()
