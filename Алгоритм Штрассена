@@ -40,7 +40,7 @@ def privmatrix1(n):
     return f
 
 
-def intput_matrix(n):
+def input_matrix(n):
     privmatrix = privmatrix1(n)
     a = np.zeros((privmatrix, n), dtype=int)
     for i in range(n):
