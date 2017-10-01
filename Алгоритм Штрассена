@@ -28,7 +28,10 @@ def Str(a, b):
 def output_matrix(c, n):
     for i in range(n):
         for j in range(n):
-            print(c[i, j], end=" ")
+            if (j < n - 1):
+                print(c[i, j], end=" ")
+            else:
+                print(c[i, j])
         print()
     return
 
