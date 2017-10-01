@@ -31,7 +31,7 @@ def output_matrix(c, n):
             if (j < n - 1):
                 print(c[i, j], end=" ")
             else:
-                print(c[i, j])
+                print(c[i, j], end= "")
         print()
     return
 
