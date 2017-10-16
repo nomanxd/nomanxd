@@ -91,6 +91,7 @@ class Read:
 
     def evaluate(self, scope):
         scope[self.name] = Number(int(input()))
+        return scope[self.name]
 
 
 class FunctionCall:
